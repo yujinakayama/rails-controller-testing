@@ -1,3 +1,4 @@
+p __FILE__
 module Rails
   module Controller
     module Testing

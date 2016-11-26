@@ -1,3 +1,4 @@
+p __FILE__
 require 'active_support/concern'
 
 module Rails
