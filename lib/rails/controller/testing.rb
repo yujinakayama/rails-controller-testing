@@ -9,17 +9,20 @@ module Rails
     module Testing
       def self.install
         ActiveSupport.on_load(:action_controller_test_case) do
+          puts 'ActiveSupport.on_load(:action_controller_test_case)'
           include Rails::Controller::Testing::TestProcess
           include Rails::Controller::Testing::TemplateAssertions
         end
 
         ActiveSupport.on_load(:action_dispatch_integration_test) do
+          puts 'ActiveSupport.on_load(:action_dispatch_integration_test)'
           include Rails::Controller::Testing::TemplateAssertions
           include Rails::Controller::Testing::Integration
           include Rails::Controller::Testing::TestProcess
         end
 
         ActiveSupport.on_load(:action_view_test_case) do
+          puts 'ActiveSupport.on_load(:action_view_test_case)'
           include Rails::Controller::Testing::TemplateAssertions
         end
       end
